@@ -1,0 +1,7 @@
+para esta versión se puede investigar:
+
+https://code.google.com/p/android-protips-location/source/browse/trunk/src/com/radioactiveyak/location_best_practices/utils/GingerbreadLastLocationFinder.java
+
+el uso está en parte explicado:
+
+http://android-developers.blogspot.com.ar/2011/06/deep-dive-into-location.html
