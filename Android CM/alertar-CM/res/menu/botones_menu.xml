@@ -1,0 +1,7 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item
+        android:id="@+id/menuButton_miperfil"        
+        android:title="@string/menuLabel_miperfil"/>
+
+</menu>

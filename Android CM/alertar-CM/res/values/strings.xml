@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Alert-AR CM</string>
+    <string name="action_settings">Configuración</string>
+    <string name="boton">Botón</string>
+    
+    <!-- Header    -->
+    <string name="header_texto">Alert-AR</string>
+    <string name="logo_texto">Alert-AR</string>
+    
+    <!-- Lables comunes      -->
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="volver">Volver</string> 
+    <string name="ajustes">Ajustes</string> 
+    <string name="cerrar">Cerrar</string> 
+     <string name="omitir">Omitir</string> 
+    <string name="atencion">Atención</string>
+    <string name="alertaDialogLocationPreferencesMessage">Para una mejor precisión en su ubicación, encienda el GPS y las redes móviles</string>
+     <string name="alertaDialogNetworkPreferencesMessage">Para utilizar la aplicación necesita tener habilitada su conexión de datos.</string>
+    
+    <!-- Strings de la pantalla principal      -->    
+    <string name="policia">Policía</string>
+    <string name="bombero">Bomberos</string>
+    <string name="medico">Médico</string>    
+    <string name="ambulancia">Ambulancia</string> 
+    <string name="title_buttons_screen">Presione el botón para indicar qué tipo de ayuda necesita</string>
+    <string name="bottom_text_buttons_screen">Una vez presionado el botón, su alerta será atendida por un operador</string>
+    <string name="aviso_proceso">Obteniendo su ubicación</string>
+    <string name="msg_enviando_alerta">Enviando su información</string>
+    <string name="msg_enviando_ok">Su alerta se informó correctamente, recibirá un SMS de uno de nuestros operadores.</string>
+    <string name="msg_enviado_bad">NO fue posible informar su alerta le recomendamos comunicarse al 101.</string>
+    <string name="msg_alerta_presionada">ALERTA PRESIONADA</string>
+     <string name="msg_alerta_ya_presionada">Se están enviando sus datos</string>
+    
+    <!-- Strings para el registro de usuario      -->    
+    <string name="nombre_duenio_label">Nombre</string>
+    <string name="apellido_duenio_label">Apellido</string>
+    <string name="email_label">E-mail</string>
+    <string name="numero_telefono_label">Número de teléfono</string>
+    <string name="registrar_btn">Registrar</string>
+    <string name="msg_registrar_boton">Para utilizar el servicio deberá registrar un usuario en el sistema.</string>
+    <string name="msg_configurar_error_valor_vacio">Debe completar todos los campos.</string>
+    <string name="msg_registrar_usuario_exitoso">Se registró correctamente.</string>
+    <string name="msg_advertencia_uso">Cuando usted presione uno de los botones enviará una alerta de emergencia a nuestros operadores, por favor utilícelo con responsabilidad.</string>
+    <string name="msg_titulo_advertencia">Advertencia</string> 
+    <string name="caract_texto">11</string>
+    <string name="aviso_enviando">Enviando</string>
+    <string name="msg_registrar_usuario_error">Ocurrió un error al crear su usuario, por favor vuelva a intentarlo más tarde.</string>
+    <string name="prefijo_celular_texto">15</string>
+    
+    <!-- String de la pantalla de Mis Datos -->
+    <string name="misDatosTitulo_label">Actualice sus datos, es importante mantenerlos actualizados ya que son nuestra vía de comunicación con usted.</string>
+    <string name="guardar_btn">Guardar</string> 
+    <string name="advertencia">Nota de Advertencia</string>
+    <string name="msg_modificar_usuario_exitoso">Sus datos se actualizaron correctamente.</string>
+    <string name="msg_modificar_usuario_error">No fue posible actualizar sus datos, por favor vuelva a intentarlo más tarde.</string>
+    
+    <!-- Strings de menues -->
+    <string name="menuLabel_misdatos">Mis Datos</string>
+    <string name="menuLabel_miperfil">Mi Perfil</string>
+    
+</resources>
