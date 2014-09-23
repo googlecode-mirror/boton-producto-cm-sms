@@ -495,7 +495,8 @@ public class BotonesActivity extends Activity {
 	protected void onStart()
 	{
 		super.onStart();
-		FlurryAgent.onStartSession(this, "FPJSSQ956RK969FWV5TF");
+		//TODO GAT generar otra app en el flurry para este botón.
+		//FlurryAgent.onStartSession(this, "FPJSSQ956RK969FWV5TF");
 	}
 	 
 	@Override
