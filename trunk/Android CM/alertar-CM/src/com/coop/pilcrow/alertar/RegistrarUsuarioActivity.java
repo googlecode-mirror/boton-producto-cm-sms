@@ -70,6 +70,14 @@ public class RegistrarUsuarioActivity extends Activity{
 	 * Mensajes para el usuario.
 	 */
 	private Message message;
+	/**
+	 * Eriqueta para error en el thread de envío.
+	 */
+	private String ERROR_THREAD = "ERROR_THREAD";
+	/**
+	 * flag por si quiero cancelar el envío de datos al server.
+	 */
+	boolean reitentarEnvio = true;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -239,15 +247,26 @@ public class RegistrarUsuarioActivity extends Activity{
 				RegistroUsuarioDao registroUsuarioDao = new RegistroUsuarioDaoHttpImpl();
 				RespuestaServerSolicitudDto respuestaServerDto = null;
 				boolean volverAEnviar = true;
-				while(volverAEnviar){
+				int contReintentos = 0;
+				while(volverAEnviar  && reitentarEnvio){
 					try {
 						respuestaServerDto = registroUsuarioDao.enviarSolicitud(solicitudDto, HttpConst.PARAM_REGISTRAR);
 						msg.obj = respuestaServerDto.getRespuesta();
 						
 						//Mientras la respuesta sea igual a vacío, sigo tratando de mandar los datos.
-						volverAEnviar = respuestaServerDto.getRespuesta().equals("");						
+						volverAEnviar = respuestaServerDto.getRespuesta().equals("");	
+
+						if(volverAEnviar){
+							contReintentos++;
+							if(contReintentos > 30){
+								reitentarEnvio = false;
+								msg.obj = ERROR_THREAD;
+							}
+						}
+						
 					} catch (SolicitudUsuarioDaoException e) {
 						msg.obj = e.getMessage();
+						reitentarEnvio = false;
 					}
 				}
 				mensajeHandler.sendMessage(msg);
