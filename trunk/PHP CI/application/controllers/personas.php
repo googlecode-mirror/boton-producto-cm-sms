@@ -96,6 +96,7 @@ class Personas extends MY_Controller {
 		echo json_encode($json);
 	}
 
+	
 	public function add()
 	{
 		parent::check_is_logged();
@@ -107,7 +108,62 @@ class Personas extends MY_Controller {
 			$this->load->template('personas/personas_form_view.php', $data);
 		}
 	}
-
+	/**
+	 * servicio utilizado por el móvil para el alta de personas.
+	 */
+	public function addService(){
+		$criteria= $this->uri->uri_to_assoc(3);
+		
+		$nombre = $criteria["nombreUsuario"];
+		$mail = $criteria["email"];
+		$imei = $criteria["s"];
+		$telefono = $criteria["t"];
+		
+		$criteriaInsert["nombre"] = urldecode($nombre);
+		$criteriaInsert["mail"] = urldecode($mail);
+		$criteriaInsert["imei"] = $imei;
+		$criteriaInsert["telefono"] = $telefono;
+		$fecha_hora_server = date('Y-m-d H:i:s');
+		$criteriaInsert["fecha"] = $fecha_hora_server;
+		
+		/** Si existe el imei lo piso*/
+		if ($this->personas_model->existeImei($imei)){
+			$usuario = $this->personas_model->get_persona_by_imei($imei);
+			$criteriaInsert["id"] = $usuario["id"];
+			$this->personas_model->save($criteriaInsert);
+			echo("OK");
+		}else{
+			echo("BAD");
+		}
+			
+	}
+	/**
+	 * servicio utilizado por el móvil para el alta de personas.
+	 */
+	public function updateService(){
+		$criteria= $this->uri->uri_to_assoc(3);
+	
+		$nombre = $criteria["nombreUsuario"];
+		$mail = $criteria["email"];
+		$imei = $criteria["s"];
+		$telefono = $criteria["t"];
+			
+		$criteriaInsert["nombre"] = urldecode($nombre);
+		$criteriaInsert["mail"] = urldecode($mail);
+		$criteriaInsert["telefono"] = $telefono;
+		
+		
+		if ($this->personas_model->existeImei($imei)){ 
+			$usuario = $this->personas_model->get_persona_by_imei($imei);
+			$criteriaInsert["id"] = $usuario["id"];
+			$criteriaInsert["imei"] = $imei;				
+			$this->personas_model->save($criteriaInsert);
+			echo("OK");
+		}else{
+			echo("BAD");
+		}
+			
+	}
 	public function update($id)
 	{
 		parent::check_is_logged();

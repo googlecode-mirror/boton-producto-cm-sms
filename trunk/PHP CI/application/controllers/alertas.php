@@ -6,6 +6,7 @@ class Alertas extends MY_Controller {
 	{
 		parent::__construct();
 		$this->load->model('alertas_model');
+		$this->load->model('personas_model');
 		$this->load->library('form_validation');
 		$this->load->library('pagination');
 		$this->load->helper('security');
@@ -147,8 +148,35 @@ class Alertas extends MY_Controller {
 			$this->load->template('alertas/alertas_form_view.php', $data);
 		}
 	}
-
-	
+	/**
+	 * Servicio para el móvil, recibe las alarmas.
+	 */
+	public function addService(){
+		$criteria= $this->uri->uri_to_assoc(3);
+		
+		$accuracy = $criteria["accuracy"];
+		$speed = $criteria["speed"];
+		
+		$imei = $criteria["usuario_id"];
+		 
+		$criteriaInsert["usuario_id"] = $criteria["usuario_id"];
+		$criteriaInsert["boton_id"] = $criteria["boton_id"];
+		$criteriaInsert["lat"] = $criteria["lat"];
+		$criteriaInsert["lng"] = $criteria["lng"];
+		$criteriaInsert["locationProvider"] = $criteria["locationProvider"];
+		$criteriaInsert["fecha_hora"] = date('Y-m-d H:i:s',$criteria["time"]) ;
+		$fecha_hora_server = date('Y-m-d H:i:s');
+		$criteria["fecha_hora_server"] = $fecha_hora_server;
+		
+		
+		if ($this->personas_model->existeImei($imei)){
+			$this->alertas_model->save($criteriaInsert);
+			echo("OK");
+		}else{
+			echo("BAD");
+		}
+		
+	}
 	public function atender()
 	{
 		parent::check_is_logged();

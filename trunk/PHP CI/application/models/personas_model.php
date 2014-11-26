@@ -23,7 +23,7 @@ class Personas_model extends MY_Model {
 	 * @return Un array con el registro de la persona
 	 */
 	public function get_persona_by_imei($imei){
-		$this->db->select('nombre, mail, telefono');
+		$this->db->select('nombre, mail, telefono, id');
 		$this->db->from('personas');
 		$this->db->where('imei', $imei);
 		$this->db->limit(1);
@@ -36,6 +36,11 @@ class Personas_model extends MY_Model {
 			return $result_array[0];
 		}
 		return null;
+	}
+	public function existeImei($imei)
+	{
+		$usuario = $this->get_persona_by_imei($imei);
+		return  (!empty($usuario));
 	}
 	
 	public function find($criteria = array(), $n = NULL, $offset = NULL)
