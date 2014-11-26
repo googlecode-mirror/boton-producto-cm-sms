@@ -54,15 +54,13 @@ $db['default']['username'] = 'root';
 $db['default']['password'] = 'Tattoos';
 $db['default']['database'] = 'botonalerta';
 
-
-// PRODUCCION
 /*
+// PRODUCCION
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'gontattoo_alerta';
 $db['default']['password'] = 'callofduty';
 $db['default']['database'] = 'gontattoo_alerta';
 */
-
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

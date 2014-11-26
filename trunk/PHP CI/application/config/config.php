@@ -14,7 +14,6 @@
 | path to your installation.
 |
 */
-//$config['base_url']	= 'http://www.pilcrow.com.ar/serveralertar/';
 $config['base_url']	= 'http://localhost:8090/boton-branch/ci_admin/';
 
 /*

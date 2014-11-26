@@ -1,15 +1,22 @@
 <html>
 
 <head>
-	<title>Osteo Implants</title>
+	<title><?php echo(APP_NAME);?></title>
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/login.css" type="text/css" media="screen"/>
+	<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
 	
 	
 	<div class="container" style="text-align:center">
-		<img width="320px" src="<?php echo base_url();?>assets/img/logo.png"><br><br>
+		<div>
+			<img width="100" src="<?php echo base_url();?>assets/img/alertar_logo_ch.png">
+			<div style="font-family: 'Varela Round', sans-serif; font-size: 60px; color: #646364;">Alert-AR</div>
+		</div>
+		
+		
+		<br><br>
 		<section id="content">
 		
 			<?php echo form_open('login/verify'); ?>
@@ -22,7 +29,7 @@
 				</div>
 				<div>
 					<input type="submit" value="Ingresar" />
-					<a href="#">Olvido su contrase&ntilde;a?</a>
+					<a href="javascript:alert('pilcrow / pilcrow');">Olvido su contrase&ntilde;a?</a>
 				</div>
 			<?php echo form_close(); ?>   
 			
@@ -39,7 +46,7 @@
 			</div>
 			
 			<div class="button">
-				<a href="#">Pilcrow Admin</a>
+				M&aacute;s info: <a href="http://alertar.pilcrow.com.ar" target="_blank">alertar.pilcrow.com.ar</a>
 			</div><!-- button -->
 			
 		</section><!-- content -->

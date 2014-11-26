@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Boton Alerta Admin</title>
+		<title><?php echo(APP_NAME);?></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="<?php echo base_url();?>assets/plugins/bootstrap/bootstrap.css" rel="stylesheet">
 		<link href="<?php echo base_url();?>assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
@@ -29,6 +29,7 @@
 		<script src="<?php echo base_url();?>assets/plugins/tinymce/jquery.tinymce.min.js"></script>
 		<!-- All functions for this theme + document.ready processing -->
 		<script src="<?php echo base_url();?>assets/js/devoops.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 	</head>
 <body>
 	<!--Start Header-->
@@ -63,10 +64,9 @@
 				<div id="top-panel" class="col-xs-12 col-sm-10" style="width:100%">
 					<div class="row" style="padding-top:5px" >
 						<div class="col-xs-8 col-sm-4">
-							<div id="search">
-								<img src="<?php echo base_url();?>assets/img/logo.png" width="265px" >
-								<!-- <input type="text" placeholder="search"/>
-								<i class="fa fa-search"></i> -->
+							<div>
+								<img width="80" style="margin-top:-20px" src="<?php echo base_url();?>assets/img/alertar_logo_ch.png"/>
+								<span style="font-family: 'Varela Round', sans-serif; font-size: 50px; color: #646364;">Alert-AR</span>
 							</div>
 						</div>
 						<div class="col-xs-4 col-sm-8 top-panel-right">

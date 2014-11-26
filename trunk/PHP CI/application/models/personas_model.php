@@ -38,12 +38,6 @@ class Personas_model extends MY_Model {
 		return null;
 	}
 	
-	public function existeImei($imei)
-	{		
-		$usuario = $this->get_persona_by_imei($imei);
-		return (sizeof($usuario)==1);
-	}
-	
 	public function find($criteria = array(), $n = NULL, $offset = NULL)
 	{
 		$where = $this->_get_where($criteria);

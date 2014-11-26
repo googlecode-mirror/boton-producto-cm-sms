@@ -96,7 +96,6 @@ class Personas extends MY_Controller {
 		echo json_encode($json);
 	}
 
-	
 	public function add()
 	{
 		parent::check_is_logged();
