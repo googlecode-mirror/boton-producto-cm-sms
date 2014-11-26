@@ -30,12 +30,13 @@ public class RegistroUsuarioDaoHttpImpl implements RegistroUsuarioDao{
 		String data = "";
         try{
         	if(solicitudDto.getNombreUsuario() != null){
-        		data = URLEncoder.encode(HttpConst.PARAM_USUARIO_SOLICITUD, "UTF-8") + "/" + URLEncoder.encode(solicitudDto.getNombreUsuario(), "UTF-8"); 
+        		String concatNombre = solicitudDto.getNombreUsuario();
+        		if(solicitudDto.getApellidoUsuario()!= null){
+            		concatNombre = solicitudDto.getNombreUsuario() + " " + solicitudDto.getApellidoUsuario();
+            	}
+        		data = URLEncoder.encode(HttpConst.PARAM_USUARIO_SOLICITUD, "UTF-8") + "/" + URLEncoder.encode(concatNombre, "UTF-8").replace("+", "%20"); 
         	}
-        	if(solicitudDto.getApellidoUsuario()!= null){
-        		String concatApellido = " " + solicitudDto.getApellidoUsuario();
-        		data = data + URLEncoder.encode(concatApellido, "UTF-8");
-        	}
+        	
         	if(solicitudDto.getEMail() != null){
         		data += "/" + URLEncoder.encode(HttpConst.PARAM_EMAIL_SOLICITUD, "UTF-8") + "/" + URLEncoder.encode(solicitudDto.getEMail(), "UTF-8"); 
         	}

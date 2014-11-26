@@ -81,7 +81,7 @@ public class BotonesActivity extends Activity {
 	/**
 	 * Tiempo máximo, en segundos, de antigüedad de una location.
 	 */
-	private static final int DELTA_MAX_SEG = 1000 * 60 * 10;
+	private static final int DELTA_MAX_SEG = 1000 * 60 * 20;
 	/**
 	 * Mensajes para el usuario.
 	 */
@@ -243,6 +243,7 @@ public class BotonesActivity extends Activity {
 		if(deltaTime > DELTA_MAX_SEG){
 			//message.showLongTimeMessage("#####locationAnterior: " + timelocationString + " actual " + timeActualString );
 			locationAnterior = locationNew;
+			location = null;
 		}else{
 			//message.showLongTimeMessage("location: " + timelocationString + " actual " + timeActualString );
 			location = locationNew;
