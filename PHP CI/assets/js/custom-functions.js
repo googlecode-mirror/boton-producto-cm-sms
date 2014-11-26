@@ -66,7 +66,7 @@ function fillUserDataInfo(user_id, flag_show_data){
 		if ($('#user_data').css("display")=='none'){
 		    $('#user_data').slideToggle();
 		}
-		if ($('#lista_alertas').css("display")=='block'){
+		if ($('#').css("display")=='block'){
 		    $('#lista_alertas').slideToggle();
 		}
 	}
@@ -194,7 +194,7 @@ $(function() {
 		});
 		
 		//ahora limpio la lista de alertas para crear una lista con las nuevas que vinieron
-		var divHeight = $("#lista_alertas").css("height");
+		var divHeight = $("#lista_alertas").css("height") - 10;
 		$("#lista_alertas").html("<div id='relleno' style='height:"+divHeight+"'></div>");
 		
 		//por cada alerta que vino, dibujo un marker

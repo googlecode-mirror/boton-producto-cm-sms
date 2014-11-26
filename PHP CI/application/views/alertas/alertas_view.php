@@ -24,7 +24,7 @@ function atenderAlertaAjax(alerta_id, valor){
 		<div id="breadcrumb" class="col-md-12">
 			<a href="#" class="show-sidebar"><i class="fa fa-bars"></i></a>
 			<ol class="breadcrumb">
-				<li><a href="#" onclick="window.location.href = '<?php echo base_url('index.php');?>/home'">Inicio</a></li>
+				<li><a href="#" onclick="window.location.href = '../home'">Inicio</a></li>
 				<li>Alertas</li>
 			</ol>
 		</div>

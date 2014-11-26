@@ -6,7 +6,6 @@ class Alertas extends MY_Controller {
 	{
 		parent::__construct();
 		$this->load->model('alertas_model');
-		$this->load->model('personas_model');
 		$this->load->library('form_validation');
 		$this->load->library('pagination');
 		$this->load->helper('security');
@@ -55,6 +54,23 @@ class Alertas extends MY_Controller {
 		$data['error'] = $this->session->flashdata('error');
 
 		$this->load->template('alertas/alertas_view.php', $data);
+	}
+	
+	/**
+	 * Este metodo muestra el detalle de una alerta
+	 * */	
+	public function viewDetail()
+	{
+		parent::check_is_logged();
+		
+		$last = $this->uri->total_segments(); // Obtengo la pocision del ultimo segmento.
+		$ultimo_elemento = $this->uri->segment($last);
+	
+		$data['alerta'] = $this->alertas_model->findDetail($ultimo_elemento);
+		$data['msg'] = $this->session->flashdata('msg');
+		$data['error'] = $this->session->flashdata('error');
+	
+		$this->load->template('alertas/alerta_detail_view.php', $data);
 	}
 	
 	/*
@@ -121,15 +137,15 @@ class Alertas extends MY_Controller {
 	}
 
 	public function add()
-	{		
-		$criteria= $this->uri->uri_to_assoc(3);
-		
-		$imei = $criteria["usuario_id"];
-		if ($this->personas_model->existeImei($imei)){
-			
-		}else{
-			echo("BAD");
-		}		
+	{
+		parent::check_is_logged();
+		if ($this->input->post('sendform') == 1)
+			$this->save();
+		else
+		{
+			$data['title'] = 'Alta de la alerta';
+			$this->load->template('alertas/alertas_form_view.php', $data);
+		}
 	}
 
 	

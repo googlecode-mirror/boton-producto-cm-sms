@@ -15,8 +15,8 @@
 	<div class="row">
 		<div id="breadcrumb" class="col-md-12">
 			<ol class="breadcrumb">
-				<li><a href="#" onclick="window.location.href = '<?php echo base_url('index.php');?>/home'">Inicio</a></li>
-				<li><a href="#" onclick="window.location.href = '<?php echo base_url('index.php');?>/users/index'">Usuaios</a></li>
+				<li><a href="#" onclick="window.location.href = '../home'">Inicio</a></li>
+				<li><a href="#" onclick="window.location.href = 'users/index'">Usuaios</a></li>
 				<li><a href="#">Roles y Permisos</a></li>
 			</ol>
 		</div>

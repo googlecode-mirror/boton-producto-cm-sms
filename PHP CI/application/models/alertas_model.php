@@ -44,6 +44,25 @@ class Alertas_model extends MY_Model {
     		return array();
 	}
 	
+	
+	public function findDetail($idAlerta)
+	{
+		$this->db->select('A.boton_id, A.lat, A.lng, A.fecha_hora, A.locationProvider, A.accuracy, A.atendido, A.id as idAlerta, P.id as idPersona, P.nombre, P.mail, P.telefono');
+		$this->db->from('alertas as A');
+		$this->db->join('personas as P', 'A.usuario_id = P.imei');
+		$this->db->where('A.id', $idAlerta);
+		
+		$query = $this->db->get();
+	
+		if($query -> num_rows() > 0){
+    		$result_array = $query->result_array();
+			return $result_array[0];
+    	}
+    	else
+    		return array();
+	}
+	
+	
 	public function count($criteria = array())
 	{
 		$where = $this->_get_where($criteria);
