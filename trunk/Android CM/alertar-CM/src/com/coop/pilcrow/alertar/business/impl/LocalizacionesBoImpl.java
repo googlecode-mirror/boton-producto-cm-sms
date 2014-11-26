@@ -81,11 +81,15 @@ public class LocalizacionesBoImpl implements LocalizacionesBo {
 		if(location == null){
 			return botonDto;
 		}
-		String fecha = sdf.format(location.getTime());
+		
 		botonDto.setLatitud(formatoCoord.format(location.getLatitude()));
 		botonDto.setLongitud(formatoCoord.format(location.getLongitude()));
 		botonDto.setLocationProvider(location.getProvider());
-		botonDto.setTime(fecha);
+		
+		//para codeIgniter le paso el timestamp
+		String fecha = sdf.format(location.getTime());
+		long unixTime = location.getTime() / 1000L;
+		botonDto.setTime(String.valueOf(unixTime));
 		try{
 			botonDto.setAccuracy(Float.valueOf(location.getAccuracy()).toString());
 			botonDto.setAltitude(Double.valueOf(location.getAltitude()).toString());

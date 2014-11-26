@@ -248,6 +248,7 @@ public class RegistrarUsuarioActivity extends Activity{
 				RespuestaServerSolicitudDto respuestaServerDto = null;
 				boolean volverAEnviar = true;
 				int contReintentos = 0;
+				reitentarEnvio = true;
 				while(volverAEnviar  && reitentarEnvio){
 					try {
 						respuestaServerDto = registroUsuarioDao.enviarSolicitud(solicitudDto, HttpConst.PARAM_REGISTRAR);
