@@ -2,6 +2,7 @@ package com.coop.pilcrow.alertar;
 
 
 import java.text.DateFormat;
+
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 
@@ -41,7 +42,7 @@ import com.coop.pilcrow.alertar.dao.impl.AlarmaDaoHttpImpl;
 import com.coop.pilcrow.alertar.dto.BotonDto;
 import com.coop.pilcrow.alertar.dto.RespuestaServerPosDto;
 import com.coop.pilcrow.alertar.util.Message;
-import com.flurry.android.FlurryAgent;
+//import com.flurry.android.FlurryAgent;
 
 /**
  * Actividad que se encarga del manejo de los botones.
@@ -504,6 +505,6 @@ public class BotonesActivity extends Activity {
 	protected void onStop()
 	{
 		super.onStop();		
-		FlurryAgent.onEndSession(this);
+		//FlurryAgent.onEndSession(this);
 	}
 }
