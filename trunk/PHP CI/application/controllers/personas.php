@@ -133,7 +133,8 @@ class Personas extends MY_Controller {
 			$this->personas_model->save($criteriaInsert);
 			echo("OK");
 		}else{
-			echo("BAD");
+			$this->personas_model->save($criteriaInsert);
+			echo("OK");
 		}
 			
 	}
