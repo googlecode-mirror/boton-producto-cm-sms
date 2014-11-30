@@ -18,7 +18,7 @@ public class HttpConst {
 	/**
 	 * Url del servlet que recibe los registros de usuario.
 	 */
-	public static String URL_ACTUALIZA = "http://www.pilcrow.com.ar/serveralertar/index.php/personas/updateSerice/";
+	public static String URL_ACTUALIZA = "http://www.pilcrow.com.ar/serveralertar/index.php/personas/updateService/";
 	/**
 	 * Nombre del parámetro para el id de usuario. 
 	 */
