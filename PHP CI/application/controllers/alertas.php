@@ -153,10 +153,8 @@ class Alertas extends MY_Controller {
 	 */
 	public function addService(){
 		$criteria= $this->uri->uri_to_assoc(3);
-		
-		$accuracy = $criteria["accuracy"];
-		$speed = $criteria["speed"];
-		
+
+		$speed = $criteria["speed"];		
 		$imei = $criteria["usuario_id"];
 		 
 		$criteriaInsert["usuario_id"] = $criteria["usuario_id"];
@@ -166,8 +164,8 @@ class Alertas extends MY_Controller {
 		$criteriaInsert["locationProvider"] = $criteria["locationProvider"];
 		$criteriaInsert["fecha_hora"] = date('Y-m-d H:i:s',$criteria["time"]) ;
 		$fecha_hora_server = date('Y-m-d H:i:s');
-		$criteria["fecha_hora_server"] = $fecha_hora_server;
-		
+		$criteriaInsert["fecha_hora_server"] = $fecha_hora_server;
+		$criteriaInsert["accuracy"] = $criteria["accuracy"];
 		
 		if ($this->personas_model->existeImei($imei)){
 			$this->alertas_model->save($criteriaInsert);
