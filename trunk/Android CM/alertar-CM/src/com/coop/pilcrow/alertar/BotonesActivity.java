@@ -2,10 +2,8 @@ package com.coop.pilcrow.alertar;
 
 
 import java.text.DateFormat;
-
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-
 
 import android.app.Activity;
 import android.app.AlertDialog;
