@@ -29,7 +29,7 @@ import com.coop.pilcrow.alertar.dto.RegistroUsuarioDto;
 import com.coop.pilcrow.alertar.dto.RespuestaServerSolicitudDto;
 import com.coop.pilcrow.alertar.dto.SolicitudUsuarioDto;
 import com.coop.pilcrow.alertar.util.Message;
-import com.flurry.android.FlurryAgent;
+//import com.flurry.android.FlurryAgent;
 
 /**
  * Actividad que se encarga de registrar al usuario en el sistema.
@@ -397,6 +397,6 @@ public class RegistrarUsuarioActivity extends Activity{
 	protected void onStop()
 	{
 		super.onStop();		
-		FlurryAgent.onEndSession(this);
+		//FlurryAgent.onEndSession(this);
 	}
 }
