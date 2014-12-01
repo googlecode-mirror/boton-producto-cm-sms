@@ -159,13 +159,13 @@ class Alertas extends MY_Controller {
 		 
 		$criteriaInsert["usuario_id"] = $criteria["usuario_id"];
 		$criteriaInsert["boton_id"] = $criteria["boton_id"];
-		$criteriaInsert["lat"] = $criteria["lat"];
-		$criteriaInsert["lng"] = $criteria["lng"];
+		$criteriaInsert["lat"] = urldecode($criteria["lat"]);
+		$criteriaInsert["lng"] = urldecode($criteria["lng"]);
 		$criteriaInsert["locationProvider"] = $criteria["locationProvider"];
 		$criteriaInsert["fecha_hora"] = date('Y-m-d H:i:s',$criteria["time"]) ;
 		$fecha_hora_server = date('Y-m-d H:i:s');
 		$criteriaInsert["fecha_hora_server"] = $fecha_hora_server;
-		$criteriaInsert["accuracy"] = $criteria["accuracy"];
+		$criteriaInsert["accuracy"] = urldecode($criteria["accuracy"]);
 		
 		if ($this->personas_model->existeImei($imei)){
 			$this->alertas_model->save($criteriaInsert);
