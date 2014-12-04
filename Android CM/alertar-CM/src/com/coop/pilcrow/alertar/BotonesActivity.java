@@ -239,14 +239,14 @@ public class BotonesActivity extends Activity {
 		
 		
 		//me fijo qué tan vieja es.
-		if(deltaTime > DELTA_MAX_SEG){
-			//message.showLongTimeMessage("#####locationAnterior: " + timelocationString + " actual " + timeActualString );
-			locationAnterior = locationNew;
-			location = null;
-		}else{
+//		if(deltaTime > DELTA_MAX_SEG){
+//			//message.showLongTimeMessage("#####locationAnterior: " + timelocationString + " actual " + timeActualString );
+//			locationAnterior = locationNew;
+//			location = null;
+//		}else{
 			//message.showLongTimeMessage("location: " + timelocationString + " actual " + timeActualString );
 			location = locationNew;
-		}
+//		}
 		//TODO GAT: ver si quiero esperar una de buena precisión o darle un límite de tiempo y avisar que demora mucho o mandar la que tengo.
 		
 	}
@@ -258,6 +258,12 @@ public class BotonesActivity extends Activity {
 	}
 	@Override    
 	protected void onPause() {
+		
+		if(!botonEnviadoActivo){
+			
+			//Dejo de escuchar al servidor de posiciones.
+			locationManager.removeUpdates(locationListener);
+		}
 		super.onPause();
 	}
 	@Override
