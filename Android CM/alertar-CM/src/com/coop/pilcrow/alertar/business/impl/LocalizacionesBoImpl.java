@@ -82,8 +82,12 @@ public class LocalizacionesBoImpl implements LocalizacionesBo {
 			return botonDto;
 		}
 		
-		botonDto.setLatitud(formatoCoord.format(location.getLatitude()));
-		botonDto.setLongitud(formatoCoord.format(location.getLongitude()));
+		String latitud = formatoCoord.format(location.getLatitude());
+		latitud = latitud.replace(",", ".");
+		String longitud = formatoCoord.format(location.getLongitude());
+		longitud = longitud.replace(",", ".");
+		botonDto.setLatitud(latitud);
+		botonDto.setLongitud(longitud);
 		botonDto.setLocationProvider(location.getProvider());
 		
 		//para codeIgniter le paso el timestamp
